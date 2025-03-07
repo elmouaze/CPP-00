@@ -10,5 +10,5 @@ public:
     ~Phonebook(void);
     void Add_Contact();
     void print();
-    std::string truncate(const std::string &str);  
+    std::string truncate(const std::string str);  
 };

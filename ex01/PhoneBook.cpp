@@ -12,7 +12,7 @@ void Phonebook::Add_Contact()
     m_index++ ;
 }
 
-std::string Phonebook::truncate(const std::string& str) {
+std::string Phonebook::truncate(const std::string str) {
         if (str.length() > 10) {
             return str.substr(0, 9) + '.'; 
         }
@@ -39,7 +39,8 @@ void Phonebook::print()
     while (true && i > 0) {
         std::cout << "Enter the index of the contact to display :";
         std::cin >> index;
-        if (index >= 0 && index < i) {
+        if (index >= 0 && index < i)
+        {
             phonebook[i-1].print();
             break;
         } else {

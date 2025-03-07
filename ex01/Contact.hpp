@@ -14,6 +14,8 @@ public:
     ~Contact();
     void Newcontact();
     void print();
+    std::string  getInput(const std::string prompt,int flag);
+
 	std::string	get_name(void) ;
 	std::string	get_lname(void) ;
 	std::string	get_nickname(void) ;

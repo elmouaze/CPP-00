@@ -15,13 +15,17 @@ int main()
         std::cout << "3 -  EXIT   - Close the program\n";
         std::cout << "Enter your choice: ";
         std::getline(std::cin, com);
-        if (!com.compare("1"))
+        if (!com.compare("ADD"))
             book.Add_Contact();
-        else if (!com.compare("2"))
+        else if (!com.compare("SEARCH"))
             book.print();
-        else if (!com.compare("3"))
+        else if (!com.compare("EXIT"))
             return (0);
-      
+        else if (std::cin.eof())
+		    return (std::cout << std::endl,0);
+        else
+            std::cout << "Wrong choice \n";
+       
     }
     return (0);
 }

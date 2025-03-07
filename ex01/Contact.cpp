@@ -3,7 +3,7 @@
 Contact::Contact () { return ;}
 Contact::~Contact () { return ;}
 
-int empty(std::string &str)
+int empty(std::string str)
 {
     int i = 0;
     while (i < (int)str.length())
@@ -15,7 +15,7 @@ int empty(std::string &str)
     return (1);
 }
 
-int valid_num(std::string &field, size_t size)
+int valid_num(std::string field, size_t size)
 {
     for(size_t i = 0; i < size; i++) {
         if (!isdigit(field[i]))
@@ -26,7 +26,8 @@ int valid_num(std::string &field, size_t size)
     }
     return (0);
 }
-void getInput(const std::string &prompt, std::string &field,int flag) {
+std::string  getInput(const std::string prompt,int flag) {
+      std::string field;
         while (1)
         {
             std::cout << prompt;
@@ -40,26 +41,16 @@ void getInput(const std::string &prompt, std::string &field,int flag) {
                 continue;
             break;
         } 
+        return (field);
     }
 
 void Contact::Newcontact()
 {
-    std::string firstName;
-    std::string lastName;
-    std::string nickname;
-    std::string phoneNumber;
-    std::string darkestSecret;
-
-    getInput("Enter First Name: ", firstName, 0);
-    this->m_firstname =firstName;
-    getInput("Enter Last Name: ", lastName, 0);
-    this->m_lastname =lastName;
-    getInput("Enter Nickname: ", nickname, 0);
-    this->m_nickname =nickname;
-    getInput("Enter Phone Number: ", phoneNumber,1);
-    this->m_number =phoneNumber;
-    getInput("Enter Darkest Secret: ", darkestSecret,0);
-    this->m_darketsecret =darkestSecret;
+    this->m_firstname = getInput("Enter First Name: ", 0);
+    this->m_lastname =  getInput("Enter Last Name: ",  0);
+    this->m_nickname = getInput("Enter Nickname: ", 0);
+    this->m_number = getInput("Enter Phone Number: ",1);
+    this->m_darketsecret = getInput("Enter Darkest Secret: ",0);
 
 }
 void Contact::print()
