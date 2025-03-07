@@ -1,14 +1,14 @@
 #include "Contact.hpp"
+#include <iomanip>      
+
 class Phonebook{
     Contact phonebook[8];
-    int m_index = 1;
+    int m_index;
+
 public:
     Phonebook(void);
     ~Phonebook(void);
     void Add_Contact();
-    {
-     m_index++;
-       phonebook[m_index % 8].Newcontact(m_index);
-    }
-
+    void print();
+    std::string truncate(const std::string &str);  
 };

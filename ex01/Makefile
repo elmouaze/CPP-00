@@ -1,7 +1,7 @@
 
 NAME = phonebook
 
-SRC = main.cpp Contact.cpp
+SRC = main.cpp Contact.cpp PhoneBook.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
@@ -26,5 +26,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all $(NAME) clean fclean re
 

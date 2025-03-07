@@ -1,3 +1,5 @@
+#ifndef CONTACT_HPP
+#define CONTACT_HPP
 #include <string>
 #include <iostream>
 class Contact{
@@ -10,8 +12,16 @@ class Contact{
 public:
     Contact();
     ~Contact();
-    void Newcontact(int index);
-    void print(){
-        std::cout << m_firstname << " " << m_lastname << " " << m_number << std::endl;
-    };
-};
+    void Newcontact();
+    void print();
+	std::string	get_name(void) ;
+	std::string	get_lname(void) ;
+	std::string	get_nickname(void) ;
+	std::string	get_number(void) ;
+	std::string	get_secret(void) ;
+	void		set_name(std::string str);
+	void		set_lname(std::string str);
+	void		set_nick(std::string str);
+	void		set_number(std::string str);
+	void		set_secret(std::string str);};
+#endif

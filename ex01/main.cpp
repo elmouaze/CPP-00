@@ -3,7 +3,7 @@
 #include <cstdlib> 
 int main()
 {
-    Phonebook book[8];
+    Phonebook book;
     std::cout << "Welcome to the Phonebook!\n";
     while (1)
     {
@@ -16,11 +16,12 @@ int main()
         std::cout << "Enter your choice: ";
         std::getline(std::cin, com);
         if (!com.compare("1"))
-            book->Add_Contact();
-        // else if (!com.compare("2"))
-        // else if (!com.compare("3"))
-        // else
-        //                system("clear");
-
-        }
+            book.Add_Contact();
+        else if (!com.compare("2"))
+            book.print();
+        else if (!com.compare("3"))
+            return (0);
+      
+    }
+    return (0);
 }
