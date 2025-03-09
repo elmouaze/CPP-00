@@ -1,4 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ael-moua <ael-moua@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/08 21:48:20 by ael-moua          #+#    #+#             */
+/*   Updated: 2025/03/08 21:48:21 by ael-moua         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Contact.hpp"
+#include <cstdlib>
 
 Contact::Contact () { return ;}
 Contact::~Contact () { return ;}
@@ -12,29 +25,44 @@ int empty(std::string str)
             return (0);
         i++;
     }
+    std::cout << "DATA cannot be empty ⚠️.\n";
     return (1);
 }
 
 int valid_num(std::string field, size_t size)
 {
-    for(size_t i = 0; i < size; i++) {
+    for (size_t i = 0; i < size; i++) {
         if (!isdigit(field[i]))
         {
-            std::cout << "Field should only contain numbers⚠️.\n"; 
+            std::cout << "DATA should only contain numbers⚠️.\n"; 
             return (1);
         }
     }
     return (0);
 }
-std::string  getInput(const std::string prompt,int flag) {
-      std::string field;
+int unpchar(std::string field)
+{
+    for (size_t i = 0 ; i < field.length(); i++)
+    {
+        if (!isprint(field[i]))
+            return (std::cout << "DATA cannot contain non printable characters ⚠️.\n",1);
+    }
+    return (0);
+}
+
+std::string  Contact::getInput(const std::string prompt,int flag)
+{
+        std::string field;
         while (1)
         {
             std::cout << prompt;
-            std::getline(std::cin, field);
-            if (empty(field))
+            if(!(std::getline(std::cin, field)))
             {
-                std::cout << "Field cannot be empty ⚠️.\n";
+                std::cout <<std::endl;
+                exit (1);
+            }
+            if (empty(field) || unpchar(field))
+            {
                 continue;
             }
             else if (flag == 1 && valid_num(field, field.length()))
@@ -42,7 +70,7 @@ std::string  getInput(const std::string prompt,int flag) {
             break;
         } 
         return (field);
-    }
+}
 
 void Contact::Newcontact()
 {

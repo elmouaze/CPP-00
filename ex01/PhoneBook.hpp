@@ -1,5 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ael-moua <ael-moua@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/08 21:48:17 by ael-moua          #+#    #+#             */
+/*   Updated: 2025/03/08 21:52:26 by ael-moua         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Contact.hpp"
 #include <iomanip>      
+#include <iostream>
+#include <stdlib.h> 
 
 class Phonebook{
     Contact phonebook[8];

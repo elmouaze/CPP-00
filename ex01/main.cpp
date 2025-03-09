@@ -1,13 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ael-moua <ael-moua@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/08 21:48:35 by ael-moua          #+#    #+#             */
+/*   Updated: 2025/03/08 21:49:24 by ael-moua         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Contact.hpp"
 #include "PhoneBook.hpp"
-#include <cstdlib> 
+
 int main()
 {
     Phonebook book;
     std::cout << "Welcome to the Phonebook!\n";
     while (1)
     {
-        system("CLS");
         std::string com;
         std::cout << "Please enter the number  of command:\n";
         std::cout << "1 -  ADD    - Add a new contact\n";
@@ -24,8 +35,9 @@ int main()
         else if (std::cin.eof())
 		    return (std::cout << std::endl,0);
         else
-            std::cout << "Wrong choice \n";
-       
+        {
+            std::cout << "UNKNOWN choice \n"; 
+        }
     }
     return (0);
 }
