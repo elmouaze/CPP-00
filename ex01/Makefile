@@ -15,7 +15,7 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) PhoneBook.hpp Contact.hpp
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 clean:
