@@ -6,7 +6,7 @@
 /*   By: ael-moua <ael-moua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 21:48:35 by ael-moua          #+#    #+#             */
-/*   Updated: 2025/03/08 21:49:24 by ael-moua         ###   ########.fr       */
+/*   Updated: 2025/03/16 00:43:21 by ael-moua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 int main()
 {
-    Phonebook book;
-    std::cout << "Welcome to the Phonebook!\n";
+    PhoneBook book;
+    std::cout << "Welcome to the PhoneBook!\n";
     while (1)
     {
         std::string com;

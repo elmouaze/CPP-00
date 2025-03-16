@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-moua <ael-moua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/08 21:48:17 by ael-moua          #+#    #+#             */
-/*   Updated: 2025/03/16 01:22:53 by ael-moua         ###   ########.fr       */
+/*   Created: 2025/03/16 00:32:43 by ael-moua          #+#    #+#             */
+/*   Updated: 2025/03/16 00:32:44 by ael-moua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.hpp"
-#include <iomanip>      
 #include <iostream>
 
-class PhoneBook{
-    Contact Phonebook[8];
-    int m_index;
-
-public:
-    PhoneBook(void);
-    ~PhoneBook(void);
-    void Add_Contact(void);
-    void print(void);
-    std::string truncate(const std::string str);
-};
-
-
+int main(int ac, char **av)
+{
+    int i = 0, j = 0;
+    if (ac == 1)
+        std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
+    while (++i < ac)
+    {
+        j = 0;
+        while (av[i][j] != '\0')
+        {
+            if (isalpha(av[i][j]))
+                std::cout << (char)toupper(av[i][j++]);
+            else
+                std::cout << av[i][j++];
+        }
+    }
+    std::cout << "\n";
+    return (0);
+}

@@ -6,17 +6,16 @@
 /*   By: ael-moua <ael-moua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 21:48:20 by ael-moua          #+#    #+#             */
-/*   Updated: 2025/03/08 21:48:21 by ael-moua         ###   ########.fr       */
+/*   Updated: 2025/03/16 01:21:26 by ael-moua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
-#include <cstdlib>
 
-Contact::Contact () { return ;}
-Contact::~Contact () { return ;}
+Contact::Contact (void) { return ;}
+Contact::~Contact (void) { return ;}
 
-int empty(std::string str)
+static int empty(std::string str)
 {
     int i = 0;
     while (i < (int)str.length())
@@ -29,23 +28,28 @@ int empty(std::string str)
     return (1);
 }
 
-int valid_num(std::string field, size_t size)
+static int valid_num(std::string field, size_t size)
 {
-    for (size_t i = 0; i < size; i++) {
+    size_t cpt = 0, i;
+    if (field[cpt] == '+')
+        cpt++;
+    for ( i = cpt; i < size; i++) {
         if (!isdigit(field[i]))
         {
             std::cout << "DATA should only contain numbers⚠️.\n"; 
             return (1);
         }
     }
+    if (i == cpt)
+         return (std::cout << "DATA should only contain numbers⚠️.\n",1);
     return (0);
 }
-int unpchar(std::string field)
+static int unpchar(std::string field)
 {
     for (size_t i = 0 ; i < field.length(); i++)
     {
         if (!isprint(field[i]))
-            return (std::cout << "DATA cannot contain non printable characters ⚠️.\n",1);
+            return (std::cout << "PHONE NUMBER cannot contain non printable characters  ⚠️.\n",1);
     }
     return (0);
 }
@@ -112,23 +116,3 @@ std::string	Contact::get_secret(void)
     return(this->m_darketsecret);
 }
 
-void	Contact::set_name(std::string str)
-{
-    this->m_firstname = str;
-}
-void	Contact::set_lname(std::string str)
-{
-    this->m_lastname = str;
-}
-void	Contact::set_nick(std::string str)
-{
-    this->m_nickname = str;
-}
-void	Contact::set_number(std::string str)
-{
-    this->m_number = str;
-}
-void	Contact::set_secret(std::string str)
-{
-    this->m_darketsecret = str;
-}
